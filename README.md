@@ -7,10 +7,10 @@ This repository documents four security fixes I applied, with the exact commands
 ## Screenshots
 
 ### Before hardening
-![Settings before hardening](images/before-hardening.png)
+![Settings before hardening](before-hardening.png)
 
 ### After hardening
-![Settings after hardening](images/after-hardening.png)
+![Settings after hardening](after-hardening.png)
 
 ## How the server is protected
 
