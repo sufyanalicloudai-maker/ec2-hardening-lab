@@ -89,7 +89,6 @@ sudo sshd -T | grep -i permitrootlogin
 
 Expected output: `permitrootlogin no`
 
-![Root login disabled](images/problem1-root-login.png)
 
 ## Problem 2: Too many login attempts
 
@@ -117,7 +116,6 @@ sudo sshd -T | grep -i maxauthtries
 
 Expected output: `maxauthtries 3`
 
-![MaxAuthTries set to 3](images/problem2-maxauthtries.png)
 
 ## Problem 3: Key-only login
 
@@ -151,8 +149,6 @@ passwordauthentication no
 pubkeyauthentication yes
 ```
 
-![Key-only login settings](images/problem3-key-only.png)
-
 **Safety test:** I kept my first SSH session open and tested in a second terminal. Key login still worked, and a login attempt without the key was refused:
 
 ```bash
@@ -160,8 +156,6 @@ ssh -o PubkeyAuthentication=no ec2-user@PUBLIC_IP
 ```
 
 Result: `Permission denied (publickey...)`
-
-![Password login refused](images/problem3-password-refused.png)
 
 ## Problem 4: Nginx version leak
 
@@ -188,8 +182,6 @@ curl -I http://localhost 2>/dev/null | grep -i server
 ```
 
 Expected output: `Server: nginx` (no version numbers)
-
-![Nginx version hidden](images/problem4-nginx-version.png)
 
 ## Final verification
 
